@@ -1,26 +1,43 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Quiz-Spiel</title>
     <link rel="stylesheet" href="src/css/style.css">
+    <!-- Neue Icons und Schriftarten -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="quiz-container">
-        <h1>JavaScript Quiz</h1>
-        
-        <div class="score-time">
-            <span>Punkte: <span id="score">0</span></span>
-            <span>Zeit: <span id="timer">0</span>s</span>
+        <div class="header">
+            <h1><i class="fa-solid fa-brain"></i> JavaScript Quiz</h1>
+            <div class="progress-text" id="progress-text">Frage 1/5</div>
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
         </div>
 
-        <div id="question" class="question"></div>
-        
-        <ul id="answers" class="answers">
-            <!-- Antworten werden via JS eingefügt -->
-        </ul>
+        <div class="game-info">
+            <div class="score-box">
+                <i class="fa-solid fa-star"></i>
+                <span id="score-element">0</span>
+            </div>
+            <div class="timer-box">
+                <i class="fa-solid fa-clock"></i>
+                <span id="timer-element">15</span>s
+            </div>
+        </div>
 
-        <button id="next-btn" class="next-btn" disabled>Nächste Frage</button>
+        <div id="question-element" class="question"></div>
+        
+        <div id="answers-element" class="answers"></div>
+
+        <div class="feedback" id="feedback-element"></div>
+
+        <button id="btn-restart" class="btn-restart hidden">
+            <i class="fa-solid fa-rotate-right"></i> Neustart
+        </button>
     </div>
 
     <script src="src/js/script.js"></script>
